@@ -1,0 +1,14 @@
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: pr-app.default.tap-pkgi
+spec:
+  packageRef:
+    refName: pr-app.default.tap
+    versionSelection:
+      constraints: 20240529212003.0.0
+      prereleases: {}
+  serviceAccountName: default
+  values:
+  - secretRef:
+      name: pr-app.default.tap-values
